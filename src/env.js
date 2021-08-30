@@ -1,0 +1,1 @@
+export default 'https://api.giphy.com/v1/gifs/search?api_key=0XKiQV1sR5U9gP8KmhC5CdOTFQsvSg1a&q='
