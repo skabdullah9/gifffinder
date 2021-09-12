@@ -1,38 +1,38 @@
 <template>
-<div class="min-h-screen bg-black bg-opacity-95">
-  <Search @giffdata="getGiffList" :tag="userTag" />
+  <div class="min-h-screen bg-black bg-opacity-95">
+    <Search @giffdata="getGiffList" :tag="userTag" />
+
     <Tags v-if="giffList.length < 1" @tag-search="tagSearch" />
     <GiffList :giffList="giffList" />
-  
-  
-</div>
+  </div>
 </template>
 
 <script>
-import {ref} from 'vue'
-import Search from './components/Search.vue'
-import GiffList from './components/GiffList.vue'
-import Tags from './components/Tags.vue'
+import { ref } from "vue";
+import Search from "./components/Search.vue";
+import GiffList from "./components/GiffList.vue";
+import Tags from "./components/Tags.vue";
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
-    Search, GiffList, Tags
+    Search,
+    GiffList,
+    Tags,
   },
   setup() {
-    const giffList = ref([])
-    const userTag = ref(null)
+    const giffList = ref([]);
+    const userTag = ref(null);
     const tagSearch = (tag) => {
-      
-      userTag.value = tag
-    }
+      userTag.value = tag;
+    };
     const getGiffList = (list) => {
-      giffList.value = list
-    }
-   console.log(giffList.value);
-    return { giffList, getGiffList, tagSearch, userTag}
-  }
-}
+      giffList.value = list;
+    };
+    console.log(giffList.value);
+    return { giffList, getGiffList, tagSearch, userTag };
+  },
+};
 </script>
 
 <style>
@@ -49,5 +49,4 @@ export default {
   background-position: center;
   /* padding-top: 60px; */
 }
-
 </style>
